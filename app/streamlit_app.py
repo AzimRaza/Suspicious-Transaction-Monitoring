@@ -2,7 +2,6 @@ import sys
 import os
 import pandas as pd
 import streamlit as st
-from fpdf import FPDF
 
 # -------------------------
 # Fix import path for custom modules
@@ -12,7 +11,7 @@ sys.path.insert(0, SRC_DIR)
 
 # -------------------------
 # Set page configuration as the first Streamlit command
-st.set_page_config(page_title="AI-Based Fraud Detector", layout="wide")
+st.set_page_config(page_title="Suspicious Transaction Monitoring", layout="wide")
 
 # -------------------------
 # Import our custom modules
@@ -51,26 +50,28 @@ if 'filters_applied' not in st.session_state:
 # -------------------------
 # Detailed About Section
 if not st.session_state.proceed:
-    st.title("💰 AI-Based Financial Fraud Detector")
+    st.title("🔍 Suspicious Transaction Monitoring & Anomaly Detection")
     st.markdown("""
     ## About This Tool
 
-    This tool analyzes financial transactions and detects unusual
-    activity that may indicate potential fraud.
+    This tool analyzes financial transaction data to identify
+    potentially suspicious and unusual transaction patterns.
 
     **Key Features:**
-    - **Automated Fraud Detection:** Uses anomaly detection techniques
-      to flag unusual transactions.
+    - **Transaction Monitoring:** Analyze transactions for unusual activity.
+    - **Anomaly Detection:** Use machine learning to identify transactions
+      that differ significantly from normal transaction patterns.
     - **Data Flexibility:** Use sample data or upload your own CSV file.
-    - **Dynamic Filtering & Sorting:** Filter transactions by amount,
-      date, and anomaly status.
+    - **Dynamic Filtering & Sorting:** Filter transactions by amount
+      and anomaly status.
     - **Detailed Transaction View:** Select a transaction to inspect
       its details.
-    - **Interactive Analysis:** Explore suspicious transactions and
-      identify potentially unusual activity.
+    - **Risk-Oriented Analysis:** Prioritize potentially suspicious
+      transactions for further review.
 
-    This tool is designed for quick transaction analysis and
-    fraud-risk identification.
+    This tool supports transaction monitoring and risk analysis.
+    An anomaly does not necessarily indicate confirmed fraud and
+    should be reviewed further.
     """)
     st.markdown("---")
 
